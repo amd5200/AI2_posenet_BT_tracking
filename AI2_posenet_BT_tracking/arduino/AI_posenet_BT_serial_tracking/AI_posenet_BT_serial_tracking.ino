@@ -56,16 +56,16 @@ static int pos_f=90;
 
 void setup()
 {
-	      Serial.begin(9600);           // start serial for output
+	Serial.begin(9600);           // start serial for output
         I2CBT.begin(9600);      //bluetooth baud rate
         pinMode(LED, OUTPUT);
         pinMode(7, OUTPUT);  //設定 pin7 為輸出，LED1就接在這（開門）
         pinMode(8, OUTPUT);  //設定 pin8 為輸出，LED2就接在這（關門）
-	      servo_h.attach(9);			//horizen at 9
-	      servo_v.attach(10);			//vertical at 10
+	servo_h.attach(9);			//horizen at 9
+	servo_v.attach(10);			//vertical at 10
         servo_f.attach(11);
-	      servo_h.write(pos_h);
-	      servo_v.write(pos_v);
+	servo_h.write(pos_h);
+        servo_v.write(pos_v);
         servo_f.write(pos_f);
         
 }
@@ -108,7 +108,7 @@ void receiveEvent()
         if(x==FIRE) fire();
         
 // /* face tracking and keyboard command
-  if(x==up && pos_v<=175) pos_v --;
+        if(x==up && pos_v<=175) pos_v --;
 	if(x==down && pos_v>=5) pos_v ++;
 	if(x==left && pos_h>=5) pos_h ++;
 	if(x==right && pos_h<=175) pos_h --;
