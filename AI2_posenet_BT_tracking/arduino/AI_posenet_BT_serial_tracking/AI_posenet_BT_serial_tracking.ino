@@ -52,8 +52,7 @@ static int pos_h=90;
 static int pos_v=90;
 static int pos_f=90;
 
-//byte cmmd[20];
-//int insize;
+
 
 void setup()
 {
@@ -128,55 +127,6 @@ void bluetooth()
   char c = I2CBT.read(); //Conduct a serial read
   readwords += c; //build the string- "passward", "d", "e" and "f"
   
-  
-/*  
- while(1)
- {
-/*
-read message from bluetooth
-
-    if ((insize=(I2CBT.available()))>0){  //讀取藍牙訊息
-       Serial.print("input size = "); 
-       Serial.println(insize);
-       for (int i=0; i<insize; i++){
-         Serial.print(cmmd[i]=char(I2CBT.read()));
-         Serial.print(" "); 
-       }
-       Serial.println("  "); 
-    }  
-///*    
-      if (cmmd[0]==115) {               //ASCII CODE   passwd:"sstu"    
-        if (cmmd[1]==116) {
-          if (cmmd[2]==117) {
-            digitalWrite(LED1, HIGH);
-            cmmd[0]=96;               //取代"aabc"的暫存字元,才能off LED1
-            delay(300);
-            digitalWrite(LED1, LOW);   //熄滅LED1
-            delay(300);
-            Serial.print(" reseting ");
-             resetFunc(); //call reset ;
-             
-            }
-          }
-         }//if
-         
-  else if (cmmd[0]==116) {              //ASCII CODE    passwd:"ttsu"          
-            if (cmmd[1]==115) {
-              if (cmmd[2]==117) {
-               digitalWrite(LED2, HIGH);
-               cmmd[0]=96;               //取代"ttsu"的暫存字元,才能off LED2   
-               delay(300);
-              digitalWrite(LED2, LOW);   //熄滅LED2 
-              delay(300);
-              Serial.print(" reseting ");
-              resetFunc(); //call reset ;
-              
-            }
-           }
-          }//else if     
-    
- }
-*/
 }
 
 void BT_readwords()
